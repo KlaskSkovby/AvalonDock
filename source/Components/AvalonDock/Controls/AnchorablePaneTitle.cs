@@ -41,12 +41,18 @@ namespace AvalonDock.Controls
 			DefaultStyleKeyProperty.OverrideMetadata(typeof(AnchorablePaneTitle), new FrameworkPropertyMetadata(typeof(AnchorablePaneTitle)));
 		}
 
-		#endregion Constructors
+		public AnchorablePaneTitle()
+		{
 
-		#region Model
+		}
 
-		/// <summary><see cref="Model"/> dependency property.</summary>
-		public static readonly DependencyProperty ModelProperty = DependencyProperty.Register(nameof(Model), typeof(LayoutAnchorable), typeof(AnchorablePaneTitle),
+
+        #endregion Constructors
+
+        #region Model
+
+        /// <summary><see cref="Model"/> dependency property.</summary>
+        public static readonly DependencyProperty ModelProperty = DependencyProperty.Register(nameof(Model), typeof(LayoutAnchorable), typeof(AnchorablePaneTitle),
 				new FrameworkPropertyMetadata(null, _OnModelChanged));
 
 		/// <summary>Gets/sets the <see cref="LayoutAnchorable"/> model attached of this view.</summary>
@@ -87,7 +93,10 @@ namespace AvalonDock.Controls
 		/// This dependency property indicates the <see cref="AvalonDock.Controls.LayoutItem"/> attached to this tag item.
 		/// </summary>
 		/// <param name="value">The new value for the property.</param>
-		protected void SetLayoutItem(LayoutItem value) => SetValue(LayoutItemPropertyKey, value);
+		protected void SetLayoutItem(LayoutItem value)
+		{
+			SetValue(LayoutItemPropertyKey, value);
+		}
 
 		#endregion LayoutItem
 
@@ -107,10 +116,18 @@ namespace AvalonDock.Controls
 			if (_isMouseDown && e.LeftButton == MouseButtonState.Pressed)
 			{
 				var pane = this.FindVisualAncestor<LayoutAnchorablePaneControl>();
-				if (pane != null)
+
+                if (pane != null)
 				{
 					var paneModel = pane.Model as LayoutAnchorablePane;
-					var manager = paneModel.Root.Manager;
+
+					// KlaskChanged transfer the floating parameters to the pane model
+					paneModel.FloatingHeight = this.Model.FloatingHeight;
+                    paneModel.FloatingWidth = this.Model.FloatingWidth;
+					paneModel.FloatingLeft = this.Model.FloatingLeft;
+					paneModel.FloatingTop = this.Model.FloatingTop;
+
+                    var manager = paneModel.Root.Manager;
 					manager.StartDraggingFloatingWindowForPane(paneModel);
 				}
 				else

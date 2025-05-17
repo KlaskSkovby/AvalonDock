@@ -26,11 +26,8 @@
 
     <Style x:Key="DropDownControlArea" TargetType="avalonDockControls:DropDownControlArea" />
 
-    <!--
-	dirkster99: Removing this ToolTip style:
-	1) As it does not appear to add any additional value?
-	2) As it overwrites other Tooltip styles (eg using MLib in Edi or Aehnlich)
-	
+    
+
 	<Style TargetType="ToolTip">
         <Setter Property="Background" Value="{DynamicResource {x:Static reskeys:ResourceKeys.Background}}" />
         <Setter Property="Foreground" Value="{DynamicResource {x:Static reskeys:ResourceKeys.NavigatorWindowForeground}}" />
@@ -62,7 +59,7 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-    </Style>	-->
+    </Style>	
 
     <!--
 		Re-styling this in AvalonDock since the menu on the drop-down button for more documents is otherwise black
@@ -85,10 +82,7 @@
 		-->
     </Style>
 
-    <!--
-	dirkster99: Removing this ContextMenu style:
-	1) As it does not appear to add any additional value?
-	2) As it overwrites other ContextMenu styles (eg using MLib in Edi or Aehnlich)
+    
 	<Style BasedOn="{StaticResource {x:Type ContextMenu}}" TargetType="{x:Type ContextMenu}">
 		<Setter Property="TextOptions.TextFormattingMode" Value="Display" />
 		<Setter Property="Background" Value="{DynamicResource {x:Static reskeys:ResourceKeys.Background}}" />
@@ -136,7 +130,7 @@
 			</Setter.Value>
 		</Setter>
 	</Style>
-	-->
+	
 
     <Style BasedOn="{StaticResource {x:Type ContextMenu}}" TargetType="{x:Type avalonDockControls:ContextMenuEx}" />
     <Style x:Key="AvalonDockThemeVs2013ToolButtonStyle" TargetType="ToggleButton">

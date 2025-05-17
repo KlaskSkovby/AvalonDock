@@ -9,6 +9,7 @@
 
 using System;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows;
@@ -625,6 +626,7 @@ namespace AvalonDock.Controls
 			}
 		}
 
+
 		private void OnActivated(object sender, EventArgs e)
 		{
 			Activated -= OnActivated;
@@ -659,6 +661,8 @@ namespace AvalonDock.Controls
 		{
 			foreach (var posElement in Model.Descendents().OfType<ILayoutElementForFloatingWindow>())
 			{
+				Debug.WriteLine("Floating height " + posElement.FloatingHeight);
+
 				posElement.FloatingLeft = Left;
 				posElement.FloatingTop = Top;
 				posElement.FloatingWidth = Width;

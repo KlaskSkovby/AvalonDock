@@ -1,0 +1,47 @@
+<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+		xmlns:avalonDock="https://github.com/Dirkster99/AvalonDock"
+		
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+	<Window.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="/AvalonDock.Themes.VS2013;component/DarkTheme.xaml" />
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</Window.Resources>
+	<Grid>
+		<avalonDock:DockingManager x:Name="Dockmanager">
+			<avalonDock:DockingManager.Theme>
+				<avalonDock:Vs2013DarkTheme/>
+			</avalonDock:DockingManager.Theme>
+			<avalonDock:LayoutRoot>
+				<avalonDock:LayoutPanel Orientation="Horizontal">
+					<avalonDock:LayoutDocumentPane>
+						<avalonDock:LayoutDocument Title="Document 1" CanClose="False" CanFloat="False" >
+							<TextBox Text="This is Document 1"/>
+						</avalonDock:LayoutDocument>
+						<avalonDock:LayoutDocument Title="Document 2" CanClose="True" FloatingWidth="100" FloatingHeight="100">
+							<TextBox Text="This is Document 2" />
+						</avalonDock:LayoutDocument>
+					</avalonDock:LayoutDocumentPane>
+                    <avalonDock:LayoutAnchorablePane DockWidth="250">
+                        <avalonDock:LayoutAnchorable Title="Selector Window" CanHide="True" CanClose="False" FloatingHeight="100" >
+                            <!-- Your tool window content goes here -->
+                            <StackPanel>
+                                <TextBox Text="testing" />
+                                <TextBox Text="two" />
+                                <!-- Add more controls as needed -->
+                            </StackPanel>
+                        </avalonDock:LayoutAnchorable>
+                    </avalonDock:LayoutAnchorablePane>
+                </avalonDock:LayoutPanel>
+			</avalonDock:LayoutRoot>
+		</avalonDock:DockingManager>
+	</Grid>
+</Window>

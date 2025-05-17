@@ -1,4 +1,4 @@
-﻿/************************************************************************
+/************************************************************************
    AvalonDock
 
    Copyright (C) 2007-2013 Xceed Software Inc.
@@ -8,6 +8,7 @@
  ************************************************************************/
 
 using System;
+using System.ComponentModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -18,6 +19,7 @@ namespace AvalonDock.Layout
 	/// <summary>Implements the layout model for the <see cref="Controls.LayoutPanelControl"/>.</summary>
 	[ContentProperty(nameof(Children))]
 	[Serializable]
+	[DesignTimeVisible(true)]
 	public class LayoutPanel : LayoutPositionableGroup<ILayoutPanelElement>, ILayoutPanelElement, ILayoutOrientableGroup
 	{
 		#region fields

@@ -10,6 +10,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
@@ -33,6 +34,7 @@ namespace AvalonDock.Layout
 	/// </summary>
 	[ContentProperty(nameof(RootPanel))]
 	[Serializable]
+	[DesignTimeVisible(true)]
 	public class LayoutRoot : LayoutElement, ILayoutContainer, ILayoutRoot, IXmlSerializable
 	{
 		#region fields

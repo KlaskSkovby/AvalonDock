@@ -1,4 +1,4 @@
-﻿/************************************************************************
+/************************************************************************
    AvalonDock
 
    Copyright (C) 2007-2013 Xceed Software Inc.
@@ -8,6 +8,7 @@
  ************************************************************************/
 
 using System;
+using System.ComponentModel;
 using System.Linq;
 
 namespace AvalonDock.Layout
@@ -16,6 +17,7 @@ namespace AvalonDock.Layout
 	/// Implements the layout model for the <see cref="Controls.LayoutDocumentControl"/>.
 	/// </summary>
 	[Serializable]
+	[DesignTimeVisible(true)]
 	public class LayoutDocument : LayoutContent
 	{
 		#region fields

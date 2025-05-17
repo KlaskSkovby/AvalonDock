@@ -39,6 +39,7 @@ namespace AvalonDock
 	/// <seealso cref="IOverlayWindowHost"/>
 	[ContentProperty(nameof(Layout))]
 	[TemplatePart(Name = "PART_AutoHideArea")]
+	[DesignTimeVisible(true)]
 	public class DockingManager : Control, IOverlayWindowHost//, ILogicalChildrenContainer
 	{
 		#region fields
@@ -72,12 +73,12 @@ namespace AvalonDock
 		/// <summary>
 		/// Static class constructor to support WPF property control registration.
 		/// </summary>
-		static DockingManager()
-		{
-			DefaultStyleKeyProperty.OverrideMetadata(typeof(DockingManager), new FrameworkPropertyMetadata(typeof(DockingManager)));
-			FocusableProperty.OverrideMetadata(typeof(DockingManager), new FrameworkPropertyMetadata(false));
-			HwndSource.DefaultAcquireHwndFocusInMenuMode = false;
-		}
+		//static DockingManager()
+		//{
+		//	DefaultStyleKeyProperty.OverrideMetadata(typeof(DockingManager), new FrameworkPropertyMetadata(typeof(DockingManager)));
+		//	FocusableProperty.OverrideMetadata(typeof(DockingManager), new FrameworkPropertyMetadata(false));
+		//	HwndSource.DefaultAcquireHwndFocusInMenuMode = false;
+		//}
 
 		/// <summary>
 		/// Class constructor.
