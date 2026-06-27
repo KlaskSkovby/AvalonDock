@@ -4,7 +4,7 @@
 		<PackageId>Dirkster.AvalonDock.Themes.Aero</PackageId>
 		<TargetFrameworks>$(ComponentTargetFrameworks)</TargetFrameworks>
         <AssemblyOriginatorKeyFile>sn.snk</AssemblyOriginatorKeyFile>
-        <SignAssembly>true</SignAssembly>
+        <SignAssembly>false</SignAssembly>
         <UseWPF>true</UseWPF>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 	</PropertyGroup>

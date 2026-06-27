@@ -5,7 +5,7 @@
 		<TargetFrameworks>$(ComponentTargetFrameworks)</TargetFrameworks>
 		<UseWPF>true</UseWPF>
         <AssemblyOriginatorKeyFile>sn.snk</AssemblyOriginatorKeyFile>
-        <SignAssembly>true</SignAssembly>
+        <SignAssembly>false</SignAssembly>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		
 	</PropertyGroup>
