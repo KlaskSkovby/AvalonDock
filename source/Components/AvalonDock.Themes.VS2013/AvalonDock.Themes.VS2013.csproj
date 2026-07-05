@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 	<PropertyGroup>
 		<RootNamespace>AvalonDock.Themes</RootNamespace>
 		<PackageId>Dirkster.AvalonDock.Themes.VS2013</PackageId>
